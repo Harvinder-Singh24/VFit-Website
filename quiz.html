@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VFit – Tell Us About Yourself</title>
+    <meta name="description" content="Answer 6 quick questions and get your personalised VFit diet plan." />
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+        .quiz-page-bg {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .quiz-page-bg .qbg-circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.08;
+        }
+
+        .qbg-c1 {
+            width: 400px;
+            height: 400px;
+            background: var(--primary);
+            top: -100px;
+            left: -80px;
+        }
+
+        .qbg-c2 {
+            width: 300px;
+            height: 300px;
+            background: var(--accent);
+            bottom: -80px;
+            right: -60px;
+        }
+
+        .grid-cols-2 {
+            grid-template-columns: repeat(2, 1fr) !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="quiz-page-bg">
+        <div class="qbg-circle qbg-c1"></div>
+        <div class="qbg-circle qbg-c2"></div>
+    </div>
+
+    <!-- ─── NAVBAR ─────────────────────────────────────────── -->
+    <nav class="navbar">
+        <a class="nav-logo" href="index.html">V<span>Fit</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">← Back to Home</a></li>
+        </ul>
+    </nav>
+
+    <!-- ─── QUIZ ───────────────────────────────────────────── -->
+    <div class="quiz-page">
+        <div class="quiz-wrapper">
+
+            <div class="quiz-header">
+                <p class="section-tag" style="text-align:center">Your Personalised Plan</p>
+                <h1 style="font-size:1.8rem; font-weight:800; letter-spacing:-0.5px; margin-bottom:4px;">
+                    Let's Build Your Diet Plan 🥗
+                </h1>
+                <p style="color:var(--text-secondary); font-size:0.95rem;">
+                    6 quick questions · Under 2 minutes
+                </p>
+            </div>
+
+            <!-- Progress -->
+            <div class="quiz-progress-bar">
+                <div class="quiz-progress-fill" style="width:0%"></div>
+            </div>
+            <p class="quiz-step-label" style="text-align:right; margin-top:-20px; margin-bottom:24px;">Step 1 of 6</p>
+
+            <!-- Card -->
+            <div class="quiz-card" id="quiz-card">
+                <!-- Rendered by JS -->
+            </div>
+
+        </div>
+    </div>
+
+    <script type="module" src="js/quiz.js"></script>
+</body>
+
+</html>

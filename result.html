@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VFit – Your Diet Plan is Ready!</title>
+    <meta name="description"
+        content="Your personalised VFit diet plan with calorie targets, macros, and meal schedule." />
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+        .result-page-bg {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .result-bg-c1 {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.07;
+            width: 500px;
+            height: 500px;
+            background: var(--primary);
+            top: -100px;
+            left: -100px;
+        }
+
+        .result-bg-c2 {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.06;
+            width: 350px;
+            height: 350px;
+            background: var(--accent);
+            bottom: -80px;
+            right: -80px;
+        }
+
+        .section-divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 32px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="result-page-bg">
+        <div class="result-bg-c1"></div>
+        <div class="result-bg-c2"></div>
+    </div>
+
+    <!-- ─── NAVBAR ─────────────────────────────────────────── -->
+    <nav class="navbar">
+        <a class="nav-logo" href="index.html">V<span>Fit</span></a>
+        <ul class="nav-links">
+            <li><a href="quiz.html">Retake Quiz</a></li>
+            <li><a href="index.html">← Home</a></li>
+        </ul>
+    </nav>
+
+    <!-- ─── RESULT PAGE ─────────────────────────────────────── -->
+    <div class="result-page">
+        <div class="result-container">
+
+            <!-- Header -->
+            <div class="result-header">
+                <div class="result-badge">🎉 Your Personalised Plan</div>
+                <h1 class="result-name" id="result-name">Hey there! 👋</h1>
+                <p class="result-subtitle" id="result-subtitle"></p>
+            </div>
+
+            <!-- Calorie Card -->
+            <div class="calorie-card">
+                <div class="calorie-label">Daily Target</div>
+                <div class="calorie-number" id="calorie-number">--</div>
+                <div class="calorie-unit">kcal / Day</div>
+                <p class="calorie-desc" id="calorie-desc"></p>
+            </div>
+
+            <!-- Macros Grid -->
+            <div class="macros-grid">
+                <div class="macro-card">
+                    <div class="macro-value" id="macro-protein">--</div>
+                    <div class="macro-label">Protein</div>
+                </div>
+                <div class="macro-card">
+                    <div class="macro-value" id="macro-carbs">--</div>
+                    <div class="macro-label">Carbs</div>
+                </div>
+                <div class="macro-card">
+                    <div class="macro-value" id="macro-fat">--</div>
+                    <div class="macro-label">Fats</div>
+                </div>
+            </div>
+
+            <hr class="section-divider">
+
+            <!-- Meal Plan Section -->
+            <div class="meal-plan">
+                <div class="meal-plan-title">
+                    <span>🥗 Time-Wise Meal Schedule</span>
+                </div>
+
+                <!-- Day Selector -->
+                <div id="day-selector-wrap" style="margin-bottom: 24px;">
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Switch Day:</p>
+                    <div class="day-selector" style="display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px;">
+                        <button class="btn-day active" data-day="1">Day 1</button>
+                        <button class="btn-day" data-day="2">Day 2</button>
+                        <button class="btn-day" data-day="3">Day 3</button>
+                        <button class="btn-day" data-day="4">Day 4</button>
+                        <button class="btn-day" data-day="5">Day 5</button>
+                        <button class="btn-day" data-day="6">Day 6</button>
+                        <button class="btn-day" data-day="7">Day 7</button>
+                    </div>
+                </div>
+
+                <div class="meal-cards" id="meal-cards">
+                    <!-- Rendered by JS -->
+                </div>
+            </div>
+
+            <hr class="section-divider">
+
+            <!-- Tips Section -->
+            <div class="tips-section">
+                <div class="meal-plan-title">
+                    <span>💡 Expert Health Tips</span>
+                </div>
+                <div class="tips-grid" id="tips-grid">
+                    <!-- Rendered by JS -->
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="result-actions">
+                <button onclick="window.print()" class="btn-secondary" style="flex:1">💾 Save as PDF</button>
+                <a href="index.html" class="btn-primary" style="flex:1; text-decoration:none; justify-content:center">Return to Home</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ─── FOOTER ─────────────────────────────────────────── -->
+    <footer>
+        <span class="footer-logo">VFit</span>
+        <p class="footer-text">© 2024 VFit · Personalised Nutrition for Every Body · Made with ❤️ in India</p>
+    </footer>
+
+    <!-- JS explicitly removed or kept empty since no rendering needed -->
+    <script src="js/result.js"></script>
+</body>
+
+</html>

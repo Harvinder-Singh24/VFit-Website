@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VFit – Your Personalised Diet Plan</title>
+  <meta name="description"
+    content="VFit gives you a science-backed, personalised diet plan based on your gender, weight and fitness goal. Free and instant." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* Extra landing-page accents */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateX(-50%) translateY(0);
+      }
+
+      50% {
+        transform: translateX(-50%) translateY(6px);
+      }
+    }
+
+    .scroll-arrow {
+      width: 20px;
+      height: 20px;
+      border-right: 2px solid var(--text-muted);
+      border-bottom: 2px solid var(--text-muted);
+      transform: rotate(45deg);
+    }
+
+    .section-header {
+      margin-bottom: 0;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 48px;
+    }
+
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      transition: all var(--transition);
+      box-shadow: var(--shadow-card);
+    }
+
+    .testimonial-card:hover {
+      border-color: var(--border-active);
+      transform: translateY(-3px);
+    }
+
+    .t-stars {
+      color: #fbbf24;
+      font-size: 1rem;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+
+    .t-text {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+
+    .t-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .t-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    .t-name {
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .t-meta {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .cta-section {
+      background: linear-gradient(135deg, rgba(0, 229, 160, 0.08) 0%, rgba(0, 184, 122, 0.04) 100%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 100px 48px;
+      text-align: center;
+    }
+
+    .cta-section .section-title {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 20px;
+    }
+
+    .cta-section p {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 500px;
+      margin: 0 auto 40px;
+    }
+
+    @media (max-width: 768px) {
+      .cta-section {
+        padding: 70px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ─── NAVBAR ─────────────────────────────────────────── -->
+  <nav class="navbar">
+    <a class="nav-logo" href="index.html">V<span>Fit</span></a>
+    <ul class="nav-links">
+      <li><a href="#how-it-works">How it Works</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="quiz.html" class="nav-cta">Get My Plan</a></li>
+    </ul>
+  </nav>
+
+  <!-- ─── HERO ───────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-bg-circles">
+      <div class="circle circle-1"></div>
+      <div class="circle circle-2"></div>
+      <div class="circle circle-3"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        100% Free · Personalised · Instant
+      </div>
+
+      <h1 class="hero-title">
+        Your Body.<br>
+        Your <span class="highlight">Diet Plan.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Answer 6 simple questions and get a science-backed, personalised diet plan tailored to your gender, weight, and
+        fitness goal — instantly.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="quiz.html" class="btn-primary">
+          🎯 Start My Plan — Free
+        </a>
+        <a href="#how-it-works" class="btn-secondary">
+          See How It Works
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">10K+</span>
+          <span class="stat-label">Diet Plans Generated</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Personalised</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">2 min</span>
+          <span class="stat-label">To Get Your Plan</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>Scroll to learn more</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ─── FEATURES STRIP ─────────────────────────────────── -->
+  <div class="features-strip">
+    <div class="features-inner">
+      <div class="feature-item">
+        <span class="feature-emoji">⚡</span>
+        <span class="feature-label">Instant Results</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-emoji">🥗</span>
+        <span class="feature-label">Veg & Non-Veg Plans</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-emoji">🎯</span>
+        <span class="feature-label">Goal-Based Calories</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-emoji">📊</span>
+        <span class="feature-label">Macro Breakdown</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-emoji">💡</span>
+        <span class="feature-label">Expert Health Tips</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── HOW IT WORKS ───────────────────────────────────── -->
+  <main id="how-it-works">
+    <div class="section">
+      <div class="section-header">
+        <p class="section-tag">How It Works</p>
+        <h2 class="section-title">3 Simple Steps to Your<br>Perfect Diet Plan</h2>
+        <p class="section-subtitle">No complicated calculations. No gym membership required. Just answer a few questions
+          and get started.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <div class="step-icon">📝</div>
+          <h3 class="step-title">Answer 6 Questions</h3>
+          <p class="step-desc">Tell us your name, gender, current weight, fitness goal, diet preference, and activity
+            level.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <div class="step-icon">🧠</div>
+          <h3 class="step-title">We Calculate Instantly</h3>
+          <p class="step-desc">Our system maps your data to the right calorie target and generates a full meal plan just
+            for you.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <div class="step-icon">🍽️</div>
+          <h3 class="step-title">Follow Your Plan</h3>
+          <p class="step-desc">Get your daily calorie target, macro split, time-wise meal schedule, and expert health
+            tips.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">04</div>
+          <div class="step-icon">🔥</div>
+          <h3 class="step-title">See Results</h3>
+          <p class="step-desc">Stick to your plan and track your transformation. Adjust as your weight changes.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ─── TESTIMONIALS ───────────────────────────────────── -->
+  <section id="results">
+    <div class="section" style="padding-top: 0;">
+      <div class="section-header">
+        <p class="section-tag">Success Stories</p>
+        <h2 class="section-title">Real People,<br>Real Results</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text">"I lost 8 kg in 3 months just by following the VFit diet plan. The meal breakdown made it so
+            easy to know what to eat at every meal."</p>
+          <div class="t-author">
+            <div class="t-avatar">👩</div>
+            <div>
+              <div class="t-name">Priya Sharma</div>
+              <div class="t-meta">Lost 8 kg · Weight Loss · Vegetarian</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text">"Finally a plan that actually makes sense for Indian food! I gained 6 kg of clean muscle
+            mass in 4 months. Highly recommended!"</p>
+          <div class="t-author">
+            <div class="t-avatar">👨</div>
+            <div>
+              <div class="t-name">Rohit Verma</div>
+              <div class="t-meta">Gained 6 kg · Weight Gain · Non-Veg</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text">"The calorie targets are spot on. I never felt starved and still managed to lose 5 kg. The
+            tips section is gold!"</p>
+          <div class="t-author">
+            <div class="t-avatar">👩</div>
+            <div>
+              <div class="t-name">Neha Patel</div>
+              <div class="t-meta">Lost 5 kg · Weight Loss · Vegetarian</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA ────────────────────────────────────────────── -->
+  <section class="cta-section">
+    <p class="section-tag">Ready to Start?</p>
+    <h2 class="section-title">Get Your Personalised<br>Diet Plan Now</h2>
+    <p>Takes just 2 minutes. No signup. No credit card. 100% free.</p>
+    <a href="quiz.html" class="btn-primary" style="font-size:1.1rem; padding:18px 48px;">
+      🚀 Start My Free Plan
+    </a>
+  </section>
+
+  <!-- ─── FOOTER ─────────────────────────────────────────── -->
+  <footer>
+    <span class="footer-logo">VFit</span>
+    <p class="footer-text">© 2024 VFit · Personalised Nutrition for Every Body · Made with ❤️ in India</p>
+  </footer>
+
+</body>
+
+</html>
