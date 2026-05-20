@@ -165,15 +165,135 @@ function renderStep(index) {
 
     if (step.type === 'payment') {
         const btn = card.querySelector('.mock-pay-btn');
-        btn.addEventListener('click', () => {
-            answers[step.id] = 'paid';
-            updateNext();
-            btn.innerHTML = '✅ Payment Successful';
-            btn.style.background = 'var(--primary-dark)';
-            btn.style.color = '#fff';
-            setTimeout(() => {
-                goNext();
-            }, 1000);
+        const errEl = card.querySelector('.payment-error');
+
+        const showError = (msg) => {
+            if (errEl) {
+                errEl.textContent = msg;
+                errEl.style.display = 'block';
+            } else {
+                alert(msg);
+            }
+        };
+
+        const hideError = () => {
+            if (errEl) {
+                errEl.style.display = 'none';
+                errEl.textContent = '';
+            }
+        };
+
+        const setButtonLoading = (loading, text) => {
+            btn.disabled = loading;
+            btn.innerHTML = text;
+            if (loading) {
+                btn.style.opacity = '0.7';
+                btn.style.cursor = 'not-allowed';
+            } else {
+                btn.style.opacity = '1';
+                btn.style.cursor = 'pointer';
+            }
+        };
+
+        btn.addEventListener('click', async () => {
+            hideError();
+            setButtonLoading(true, 'Initializing...');
+
+            try {
+                // 1. Fetch Razorpay key ID from config
+                const configRes = await fetch('/api/config');
+                if (!configRes.ok) {
+                    throw new Error('Failed to load payment configuration.');
+                }
+                const config = await configRes.json();
+                if (!config.keyId) {
+                    throw new Error('Razorpay Key ID not configured.');
+                }
+
+                // 2. Create Razorpay order
+                const orderRes = await fetch('/api/create-order', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        amount: 9900, // 9900 paise = ₹99
+                        currency: 'INR',
+                        receipt: 'receipt_vfit_' + Date.now(),
+                    }),
+                });
+
+                if (!orderRes.ok) {
+                    const errorData = await orderRes.json();
+                    throw new Error(errorData.error || 'Failed to create payment order.');
+                }
+
+                const order = await orderRes.json();
+
+                // 3. Open Razorpay checkout modal
+                const options = {
+                    key: config.keyId,
+                    amount: order.amount,
+                    currency: order.currency,
+                    name: 'VFit Plan',
+                    description: 'Lifetime Personalised Diet Plan',
+                    order_id: order.order_id,
+                    handler: async function (response) {
+                        setButtonLoading(true, 'Verifying Payment...');
+                        try {
+                            const verifyRes = await fetch('/api/verify-payment', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                    razorpay_payment_id: response.razorpay_payment_id,
+                                    razorpay_order_id: response.razorpay_order_id,
+                                    razorpay_signature: response.razorpay_signature,
+                                }),
+                            });
+
+                            const verifyData = await verifyRes.json();
+                            if (verifyRes.ok && verifyData.status === 'ok') {
+                                answers[step.id] = 'paid';
+                                updateNext();
+                                btn.innerHTML = '✅ Payment Successful';
+                                btn.style.background = 'var(--primary-dark)';
+                                btn.style.color = '#fff';
+                                setTimeout(() => {
+                                    goNext();
+                                }, 1000);
+                            } else {
+                                throw new Error(verifyData.error || 'Payment verification failed.');
+                            }
+                        } catch (err) {
+                            showError(err.message || 'Payment verification failed.');
+                            setButtonLoading(false, 'Pay Now');
+                        }
+                    },
+                    prefill: {
+                        name: answers.name || '',
+                        email: answers.email || '',
+                    },
+                    theme: {
+                        color: '#00b87a',
+                    },
+                    modal: {
+                        ondismiss: function () {
+                            showError('Payment cancelled by user.');
+                            setButtonLoading(false, 'Pay Now');
+                        },
+                    },
+                };
+
+                const rzp = new window.Razorpay(options);
+                rzp.on('payment.failed', function (response) {
+                    showError(response.error.description || 'Payment failed.');
+                    setButtonLoading(false, 'Pay Now');
+                });
+                rzp.open();
+
+            } catch (error) {
+                console.error(error);
+                showError(error.message || 'An error occurred during payment setup.');
+                setButtonLoading(false, 'Pay Now');
+            }
         });
     }
 
@@ -253,6 +373,7 @@ function buildStepHTML(step) {
             <button class="mock-pay-btn" style="background:#000; color:#fff; width:100%; padding:16px; border-radius:50px; font-weight:700; border:none; cursor:pointer; font-size:1.1rem; transition:0.3s;">
                 Pay Now
             </button>
+            <p class="payment-error" style="color: #ff4a4a; margin-top: 16px; font-weight: 500; font-size: 0.9rem; display: none; text-align: center;"></p>
         </div>`;
     }
 

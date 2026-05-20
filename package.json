@@ -1,0 +1,17 @@
+{
+  "name": "vfit-website",
+  "version": "1.0.0",
+  "description": "Personalised nutrition platform",
+  "main": "server.js",
+  "dependencies": {
+    "razorpay": "^2.9.2",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "vercel": "^54.2.0"
+  },
+  "scripts": {
+    "start": "node dev-server.js",
+    "dev": "vercel dev"
+  }
+}
