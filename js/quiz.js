@@ -272,7 +272,7 @@ function renderStep(index) {
                         email: answers.email || '',
                     },
                     theme: {
-                        color: '#00b87a',
+                        color: '#f5c518',
                     },
                     modal: {
                         ondismiss: function () {
@@ -370,7 +370,7 @@ function buildStepHTML(step) {
         body = `<div style="text-align:center; padding: 20px 0;">
             <div style="font-size:3rem; margin-bottom:16px;">₹99</div>
             <p style="color:var(--text-secondary); margin-bottom: 24px;">Secure payment via UPI, Card, or Netbanking.</p>
-            <button class="mock-pay-btn" style="background:#000; color:#fff; width:100%; padding:16px; border-radius:50px; font-weight:700; border:none; cursor:pointer; font-size:1.1rem; transition:0.3s;">
+            <button class="mock-pay-btn" style="background:var(--primary); color:#000; width:100%; padding:16px; border-radius:50px; font-weight:700; border:none; cursor:pointer; font-size:1.1rem; transition:0.3s;">
                 Pay Now
             </button>
             <p class="payment-error" style="color: #ff4a4a; margin-top: 16px; font-weight: 500; font-size: 0.9rem; display: none; text-align: center;"></p>

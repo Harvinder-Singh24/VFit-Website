@@ -1,13 +1,8 @@
-const Razorpay = require('razorpay');
-
 // Check credentials before initializing
 const keyId = process.env.RAZORPAY_KEY_ID;
 const keySecret = process.env.RAZORPAY_KEY_SECRET;
 
-const razorpay = keyId && keySecret ? new Razorpay({
-  key_id: keyId,
-  key_secret: keySecret,
-}) : null;
+let razorpay = null;
 
 module.exports = async function handler(req, res) {
   // Enable CORS
@@ -28,8 +23,16 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
 
-  if (!keyId || !keySecret || !razorpay) {
+  if (!keyId || !keySecret) {
     return res.status(401).json({ error: 'Razorpay keys not configured on server' });
+  }
+
+  if (!razorpay) {
+    const Razorpay = require('razorpay');
+    razorpay = new Razorpay({
+      key_id: keyId,
+      key_secret: keySecret,
+    });
   }
 
   // Parse body

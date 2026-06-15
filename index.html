@@ -143,10 +143,14 @@
 
   <!-- ─── NAVBAR ─────────────────────────────────────────── -->
   <nav class="navbar">
-    <a class="nav-logo" href="index.html">V<span>Fit</span></a>
+    <a class="nav-logo" href="index.html">
+      <img src="logo.PNG" alt="VFit Logo" class="logo-img">
+    </a>
     <ul class="nav-links">
       <li><a href="#how-it-works">How it Works</a></li>
       <li><a href="#results">Results</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#team">Team</a></li>
       <li><a href="quiz.html" class="nav-cta">Get My Plan</a></li>
     </ul>
   </nav>
@@ -274,52 +278,358 @@
     </div>
   </main>
 
-  <!-- ─── TESTIMONIALS ───────────────────────────────────── -->
-  <section id="results">
-    <div class="section" style="padding-top: 0;">
-      <div class="section-header">
-        <p class="section-tag">Success Stories</p>
-        <h2 class="section-title">Real People,<br>Real Results</h2>
+  <!-- ─── RESULTS (BEFORE & AFTER) ────────────────────────── -->
+  <section id="results" class="section">
+    <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+      <p class="section-tag">Transformation Gallery</p>
+      <h2 class="section-title">Before & After Results</h2>
+      <p class="section-subtitle" style="margin: 0 auto;">Real progress made by VFit members using our personalized nutrition and workout plans.</p>
+    </div>
+    
+    <div class="ba-grid" id="ba-gallery">
+      <!-- Transformation 1 -->
+      <div class="ba-card">
+        <div class="ba-image-container">
+          <img src="before&after/BEFORE - 1.png" alt="Transformation Result 1" class="ba-image" loading="lazy">
+          <div class="ba-labels">
+            <span class="ba-label-before">Before & After</span>
+          </div>
+        </div>
+        <div class="ba-info">
+          <h3 class="ba-title">Transformation 1</h3>
+          <p class="ba-meta">Lost 12 kg · 12 Weeks Plan</p>
+        </div>
       </div>
-
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-text">"I lost 8 kg in 3 months just by following the VFit diet plan. The meal breakdown made it so
-            easy to know what to eat at every meal."</p>
-          <div class="t-author">
-            <div class="t-avatar">👩</div>
-            <div>
-              <div class="t-name">Priya Sharma</div>
-              <div class="t-meta">Lost 8 kg · Weight Loss · Vegetarian</div>
-            </div>
+      
+      <!-- Transformation 2 -->
+      <div class="ba-card">
+        <div class="ba-image-container">
+          <img src="before&after/BEFORE - 1-2.png" alt="Transformation Result 2" class="ba-image" loading="lazy">
+          <div class="ba-labels">
+            <span class="ba-label-before">Before & After</span>
           </div>
         </div>
-
-        <div class="testimonial-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-text">"Finally a plan that actually makes sense for Indian food! I gained 6 kg of clean muscle
-            mass in 4 months. Highly recommended!"</p>
-          <div class="t-author">
-            <div class="t-avatar">👨</div>
-            <div>
-              <div class="t-name">Rohit Verma</div>
-              <div class="t-meta">Gained 6 kg · Weight Gain · Non-Veg</div>
-            </div>
+        <div class="ba-info">
+          <h3 class="ba-title">Transformation 2</h3>
+          <p class="ba-meta">Gained 8 kg Muscle · 16 Weeks Plan</p>
+        </div>
+      </div>
+      
+      <!-- Transformation 3 -->
+      <div class="ba-card">
+        <div class="ba-image-container">
+          <img src="before&after/BEFORE - 1-3.png" alt="Transformation Result 3" class="ba-image" loading="lazy">
+          <div class="ba-labels">
+            <span class="ba-label-before">Before & After</span>
           </div>
         </div>
+        <div class="ba-info">
+          <h3 class="ba-title">Transformation 3</h3>
+          <p class="ba-meta">Lost 15 kg · 24 Weeks Plan</p>
+        </div>
+      </div>
+      
+      <!-- Transformation 4 -->
+      <div class="ba-card">
+        <div class="ba-image-container">
+          <img src="before&after/BEFORE - 1-4.png" alt="Transformation Result 4" class="ba-image" loading="lazy">
+          <div class="ba-labels">
+            <span class="ba-label-before">Before & After</span>
+          </div>
+        </div>
+        <div class="ba-info">
+          <h3 class="ba-title">Transformation 4</h3>
+          <p class="ba-meta">Body Recomp · 8 Weeks Plan</p>
+        </div>
+      </div>
+      
+      <!-- Transformation 5 -->
+      <div class="ba-card">
+        <div class="ba-image-container">
+          <img src="before&after/BEFORE - 1-5.png" alt="Transformation Result 5" class="ba-image" loading="lazy">
+          <div class="ba-labels">
+            <span class="ba-label-before">Before & After</span>
+          </div>
+        </div>
+        <div class="ba-info">
+          <h3 class="ba-title">Transformation 5</h3>
+          <p class="ba-meta">Lost 9 kg · 12 Weeks Plan</p>
+        </div>
+      </div>
+      
+      <!-- Transformation 6 -->
+      <div class="ba-card">
+        <div class="ba-image-container">
+          <img src="before&after/BEFORE - 1-6.png" alt="Transformation Result 6" class="ba-image" loading="lazy">
+          <div class="ba-labels">
+            <span class="ba-label-before">Before & After</span>
+          </div>
+        </div>
+        <div class="ba-info">
+          <h3 class="ba-title">Transformation 6</h3>
+          <p class="ba-meta">Lean Bulk · 16 Weeks Plan</p>
+        </div>
+      </div>
+      
+      <!-- Hidden Transformations (Toggled via JS) -->
+      <div class="ba-card ba-hidden">
+        <div class="ba-image-container">
+          <img src="before&after/BEFORE - 1-7.png" alt="Transformation Result 7" class="ba-image" loading="lazy">
+          <div class="ba-labels">
+            <span class="ba-label-before">Before & After</span>
+          </div>
+        </div>
+        <div class="ba-info">
+          <h3 class="ba-title">Transformation 7</h3>
+          <p class="ba-meta">Lost 14 kg · 20 Weeks Plan</p>
+        </div>
+      </div>
+      
+      <div class="ba-card ba-hidden">
+        <div class="ba-image-container">
+          <img src="before&after/BEFORE - 1-8.png" alt="Transformation Result 8" class="ba-image" loading="lazy">
+          <div class="ba-labels">
+            <span class="ba-label-before">Before & After</span>
+          </div>
+        </div>
+        <div class="ba-info">
+          <h3 class="ba-title">Transformation 8</h3>
+          <p class="ba-meta">Gained 6 kg Muscle · 12 Weeks Plan</p>
+        </div>
+      </div>
+      
+      <div class="ba-card ba-hidden">
+        <div class="ba-image-container">
+          <img src="before&after/BEFORE - 1-9.png" alt="Transformation Result 9" class="ba-image" loading="lazy">
+          <div class="ba-labels">
+            <span class="ba-label-before">Before & After</span>
+          </div>
+        </div>
+        <div class="ba-info">
+          <h3 class="ba-title">Transformation 9</h3>
+          <p class="ba-meta">Lost 18 kg · 24 Weeks Plan</p>
+        </div>
+      </div>
+      
+      <div class="ba-card ba-hidden">
+        <div class="ba-image-container">
+          <img src="before&after/BEFORE - 1-10.png" alt="Transformation Result 10" class="ba-image" loading="lazy">
+          <div class="ba-labels">
+            <span class="ba-label-before">Before & After</span>
+          </div>
+        </div>
+        <div class="ba-info">
+          <h3 class="ba-title">Transformation 10</h3>
+          <p class="ba-meta">Body Recomp · 10 Weeks Plan</p>
+        </div>
+      </div>
+      
+      <div class="ba-card ba-hidden">
+        <div class="ba-image-container">
+          <img src="before&after/BEFORE - 1-11.png" alt="Transformation Result 11" class="ba-image" loading="lazy">
+          <div class="ba-labels">
+            <span class="ba-label-before">Before & After</span>
+          </div>
+        </div>
+        <div class="ba-info">
+          <h3 class="ba-title">Transformation 11</h3>
+          <p class="ba-meta">Lost 7 kg · 8 Weeks Plan</p>
+        </div>
+      </div>
+      
+      <div class="ba-card ba-hidden">
+        <div class="ba-image-container">
+          <img src="before&after/BEFORE - 1-12.png" alt="Transformation Result 12" class="ba-image" loading="lazy">
+          <div class="ba-labels">
+            <span class="ba-label-before">Before & After</span>
+          </div>
+        </div>
+        <div class="ba-info">
+          <h3 class="ba-title">Transformation 12</h3>
+          <p class="ba-meta">Lean Bulk · 14 Weeks Plan</p>
+        </div>
+      </div>
+      
+      <div class="ba-card ba-hidden">
+        <div class="ba-image-container">
+          <img src="before&after/BEFORE - 1-13.png" alt="Transformation Result 13" class="ba-image" loading="lazy">
+          <div class="ba-labels">
+            <span class="ba-label-before">Before & After</span>
+          </div>
+        </div>
+        <div class="ba-info">
+          <h3 class="ba-title">Transformation 13</h3>
+          <p class="ba-meta">Lost 20 kg · 30 Weeks Plan</p>
+        </div>
+      </div>
+      
+      <div class="ba-card ba-hidden">
+        <div class="ba-image-container">
+          <img src="before&after/BEFORE - 1-14.png" alt="Transformation Result 14" class="ba-image" loading="lazy">
+          <div class="ba-labels">
+            <span class="ba-label-before">Before & After</span>
+          </div>
+        </div>
+        <div class="ba-info">
+          <h3 class="ba-title">Transformation 14</h3>
+          <p class="ba-meta">Body Recomp · 12 Weeks Plan</p>
+        </div>
+      </div>
+      
+      <div class="ba-card ba-hidden">
+        <div class="ba-image-container">
+          <img src="before&after/BEFORE - 1-15.png" alt="Transformation Result 15" class="ba-image" loading="lazy">
+          <div class="ba-labels">
+            <span class="ba-label-before">Before & After</span>
+          </div>
+        </div>
+        <div class="ba-info">
+          <h3 class="ba-title">Transformation 15</h3>
+          <p class="ba-meta">Lost 11 kg · 12 Weeks Plan</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-actions">
+      <button id="btn-toggle-gallery" class="btn-secondary">Show More Results 🔍</button>
+    </div>
+  </section>
 
-        <div class="testimonial-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-text">"The calorie targets are spot on. I never felt starved and still managed to lose 5 kg. The
-            tips section is gold!"</p>
-          <div class="t-author">
-            <div class="t-avatar">👩</div>
-            <div>
-              <div class="t-name">Neha Patel</div>
-              <div class="t-meta">Lost 5 kg · Weight Loss · Vegetarian</div>
+  <!-- ─── VIDEO TESTIMONIALS (HORIZONTAL TRACK) ─────────── -->
+  <section id="testimonials" class="section video-testimonials-section">
+    <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+      <p class="section-tag">Video Testimonials</p>
+      <h2 class="section-title">Real Journeys, Real Videos</h2>
+      <p class="section-subtitle" style="margin: 0 auto;">See how VFit members transformed their health and achieved their goals.</p>
+    </div>
+    
+    <div class="video-slider-container">
+      <div class="video-slider-track">
+        <!-- Video Card 1 -->
+        <div class="video-card">
+          <div class="video-player-wrapper">
+            <video src="testimonial/DJI_20260128193207_0503_D.MP4" preload="metadata" playsinline loop></video>
+            <div class="video-overlay-play">
+              <div class="play-btn-circle">▶</div>
             </div>
           </div>
+          <div class="video-info">
+            <div>
+              <div class="video-meta">Fat Loss & Fitness</div>
+              <h3 class="video-name">Kabir's Transformation</h3>
+            </div>
+            <p class="video-text">"The diet templates and daily targets made tracking simple. Lost body fat and built solid endurance!"</p>
+          </div>
+        </div>
+        
+        <!-- Video Card 2 -->
+        <div class="video-card">
+          <div class="video-player-wrapper">
+            <video src="testimonial/DJI_20260227221343_0110_D.MP4" preload="metadata" playsinline loop></video>
+            <div class="video-overlay-play">
+              <div class="play-btn-circle">▶</div>
+            </div>
+          </div>
+          <div class="video-info">
+            <div>
+              <div class="video-meta">Muscle Gain & Bulk</div>
+              <h3 class="video-name">Aarav's Strength Story</h3>
+            </div>
+            <p class="video-text">"Gained 8 kg of clean mass. The diet structures adapt directly to macro presets that fit Indian cooking perfectly."</p>
+          </div>
+        </div>
+        
+        <!-- Video Card 3 -->
+        <div class="video-card">
+          <div class="video-player-wrapper">
+            <video src="testimonial/DJI_20260312142758_0366_D.MP4" preload="metadata" playsinline loop></video>
+            <div class="video-overlay-play">
+              <div class="play-btn-circle">▶</div>
+            </div>
+          </div>
+          <div class="video-info">
+            <div>
+              <div class="video-meta">Recovery & Joint Care</div>
+              <h3 class="video-name">Vikram's Rehabilitation</h3>
+            </div>
+            <p class="video-text">"Post-injury rehab required low-inflammation meals. Following this science-backed plan kept me healing fast."</p>
+          </div>
+        </div>
+        
+        <!-- Video Card 4 -->
+        <div class="video-card">
+          <div class="video-player-wrapper">
+            <video src="testimonial/DJI_20260312143001_0367_D.MP4" preload="metadata" playsinline loop></video>
+            <div class="video-overlay-play">
+              <div class="play-btn-circle">▶</div>
+            </div>
+          </div>
+          <div class="video-info">
+            <div>
+              <div class="video-meta">Athletic Performance</div>
+              <h3 class="video-name">Rohan's Conditioning</h3>
+            </div>
+            <p class="video-text">"Supercharged my conditioning training. Balanced food targets kept my energy peak through long gym runs."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── MEET THE EXPERTS (TEAM) ────────────────────────── -->
+  <section id="team" class="section">
+    <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+      <p class="section-tag">Elite Board</p>
+      <h2 class="section-title">Meet Our Experts</h2>
+      <p class="section-subtitle" style="margin: 0 auto;">VFit plans are supervised and backed by leading health, diet, joint, and rehab professionals.</p>
+    </div>
+    
+    <div class="team-grid">
+      <!-- Expert 1: Nutritionist -->
+      <div class="team-card">
+        <div class="team-avatar-wrapper">🥗</div>
+        <h3 class="team-name">Sarah Jenkins, RD</h3>
+        <div class="team-role">Sports Nutritionist</div>
+        <p class="team-bio">Clinical dietitian specialising in athletic nutrition, metabolic scaling, and goal-oriented diet structures.</p>
+        <div class="team-stats">
+          <div class="team-stat-item"><strong>9+ Yrs</strong> Exp</div>
+          <div class="team-stat-item"><strong>15K+</strong> Users</div>
+        </div>
+      </div>
+      
+      <!-- Expert 2: Trainers -->
+      <div class="team-card">
+        <div class="team-avatar-wrapper">🏋️</div>
+        <h3 class="team-name">Marcus Vance, CSCS</h3>
+        <div class="team-role">Strength Trainer</div>
+        <p class="team-bio">Elite strength coach expert in fat loss, functional conditioning, and hypertrophy training regimes.</p>
+        <div class="team-stats">
+          <div class="team-stat-item"><strong>12+ Yrs</strong> Exp</div>
+          <div class="team-stat-item"><strong>10K+</strong> Clients</div>
+        </div>
+      </div>
+      
+      <!-- Expert 3: Dr Orthopedic -->
+      <div class="team-card">
+        <div class="team-avatar-wrapper">🩺</div>
+        <h3 class="team-name">Dr. Amit Roy, MS</h3>
+        <div class="team-role">Dr. Orthopedic Consultant</div>
+        <p class="team-bio">Joint biomechanics specialist ensuring all meal targets and movement designs preserve skeletal safety.</p>
+        <div class="team-stats">
+          <div class="team-stat-item"><strong>15+ Yrs</strong> Exp</div>
+          <div class="team-stat-item"><strong>M.S.</strong> Ortho</div>
+        </div>
+      </div>
+      
+      <!-- Expert 4: Fitness Rehab -->
+      <div class="team-card">
+        <div class="team-avatar-wrapper">⚡</div>
+        <h3 class="team-name">Rohan Mehta, BPT</h3>
+        <div class="team-role">Fitness Rehab Expert</div>
+        <p class="team-bio">Rehab practitioner focused on injury recovery, corrective movement, kinetics, and posture preservation.</p>
+        <div class="team-stats">
+          <div class="team-stat-item"><strong>8+ Yrs</strong> Exp</div>
+          <div class="team-stat-item"><strong>B.P.T.</strong> Rehab</div>
         </div>
       </div>
     </div>
@@ -337,10 +647,56 @@
 
   <!-- ─── FOOTER ─────────────────────────────────────────── -->
   <footer>
-    <span class="footer-logo">VFit</span>
-    <p class="footer-text">© 2024 VFit · Personalised Nutrition for Every Body · Made with ❤️ in India</p>
+    <img src="logo.PNG" alt="VFit Logo" class="logo-img" style="margin: 0 auto 16px; height: 40px;">
+    <p class="footer-text">© 2026 VFit · Personalised Nutrition & Fitness Rehabilitation · Made with ❤️</p>
   </footer>
 
-</body>
+  <!-- ─── INTERACTIVE SCRIPTS ────────────────────────────── -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Gallery toggle show more / show less
+      const btnToggle = document.getElementById('btn-toggle-gallery');
+      const hiddenCards = document.querySelectorAll('#ba-gallery .ba-card.ba-hidden');
+      let isExpanded = false;
+      
+      if (btnToggle) {
+        btnToggle.addEventListener('click', () => {
+          isExpanded = !isExpanded;
+          hiddenCards.forEach(card => {
+            if (isExpanded) {
+              card.classList.remove('ba-hidden');
+            } else {
+              card.classList.add('ba-hidden');
+            }
+          });
+          btnToggle.textContent = isExpanded ? 'Show Less Results ⌃' : 'Show More Results 🔍';
+        });
+      }
 
+      // Testimonial videos overlay and play toggle
+      const playerWrappers = document.querySelectorAll('.video-player-wrapper');
+      playerWrappers.forEach(wrapper => {
+        const video = wrapper.querySelector('video');
+        
+        wrapper.addEventListener('click', () => {
+          // Pause other active videos
+          document.querySelectorAll('video').forEach(v => {
+            if (v !== video && !v.paused) {
+              v.pause();
+              v.closest('.video-player-wrapper').classList.remove('playing');
+            }
+          });
+          
+          if (video.paused) {
+            video.play();
+            wrapper.classList.add('playing');
+          } else {
+            video.pause();
+            wrapper.classList.remove('playing');
+          }
+        });
+      });
+    });
+  </script>
+</body>
 </html>
